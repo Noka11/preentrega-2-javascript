@@ -12,8 +12,16 @@ console.log("Cantidad de productos:", cantidadProductos);
 for (let i = 1; i <= cantidadProductos; i++) {
     const nombreProducto = prompt("Ingrese el nombre del producto que desea comprar:");
     const precioProducto = parseFloat(prompt("Ingrese el precio del producto:"));
-    subTotal += precioProducto;
-    console.log("producto:", nombreProducto);
+    if (isNaN(precioProducto) || precioProducto <= 0) {
+        alert("El precio ingresado no es válido. Por favor, ingrese un número.");
+        i--;
+       }
+        else {
+            console.log("monto ingresado:", precioProducto);
+            subTotal += precioProducto;
+             console.log("producto:", nombreProducto);
+            }
+   
     
 }
 
